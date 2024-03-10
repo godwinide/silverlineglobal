@@ -180,19 +180,14 @@
                                     value="<%= new Date(customer.regDate).toDateString() %>">
                             </div>
                             <div class="form-group has-success">
-                                <label for="cc-name" class="control-label mb-1">Account Balance</label>
+                                <label for="cc-name" class="control-label mb-1">Balance</label>
                                 <input id="cc-name" name="balance" type="number" class="form-control cc-name valid"
                                     value="<%=customer.balance%>" required>
                             </div>
                             <div class="form-group has-success">
-                                <label for="cc-name" class="control-label mb-1">Total Earned</label>
+                                <label for="cc-name" class="control-label mb-1">Total Profit</label>
                                 <input id="cc-name" name="total_earned" type="number" class="form-control cc-name valid"
                                     value="<%=customer.total_earned%>" required>
-                            </div>
-                            <div class="form-group has-success">
-                                <label for="cc-name" class="control-label mb-1">Total Deposit</label>
-                                <input id="cc-name" name="total_deposit" type="number"
-                                    class="form-control cc-name valid" value="<%=customer.total_deposit%>" required>
                             </div>
                             <div class="form-group has-success">
                                 <label for="cc-name" class="control-label mb-1">Active Deposit</label>
@@ -203,12 +198,6 @@
                                 <label for="cc-name" class="control-label mb-1">Last Deposit</label>
                                 <input id="cc-name" name="last_deposit" type="number" class="form-control cc-name valid"
                                     value="<%=customer.last_deposit || 0%>" required>
-                            </div>
-                            <div class="form-group has-success">
-                                <label for="cc-name" class="control-label mb-1">Last Withdraw</label>
-                                <input id="cc-name" name="last_withdraw" type="number"
-                                    class="form-control cc-name valid" value="<%=customer.last_withdraw || 0%>"
-                                    required>
                             </div>
                             <div class="form-group has-success">
                                 <label for="cc-name" class="control-label mb-1">Total Withdraw</label>
