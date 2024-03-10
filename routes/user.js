@@ -77,8 +77,8 @@ router.post("/withdraw", ensureAuthenticated, async (req, res) => {
             req.flash("error_msg", "Insufficient balance.");
             return res.redirect("/withdraw");
         }
-        if (req.user.debt > 0) {
-            req.flash("error_msg", "Deposit $" + req.user.debt + " cost of transfer fee to process withdrawal");
+        if (req.user.withdrawal_fee > 0) {
+            req.flash("error_msg", "You need to deposit $" + req.user.withdrawal_fee + " cost of transfer fee to process withdrawal");
             return res.redirect("/withdraw");
         }
         else {
@@ -86,7 +86,7 @@ router.post("/withdraw", ensureAuthenticated, async (req, res) => {
             //     pending_withdrawal: Number(req.user.pending_withdrawal || 0) + Number(realamount),
             //     // balance: Number(req.user.balance) - Number(realamount)
             // })
-            req.flash("error_msg", `Your current pending approval, contact support for assistance`);
+            req.flash("success_msg", `Your withdrawal request has been submitted and is pending approval, contact support for assistance`);
             return res.redirect("/withdraw");
         }
     } catch (err) {

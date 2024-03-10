@@ -47,7 +47,7 @@ router.post("/edit-user/:id", ensureAdmin, async (req, res) => {
             last_withdraw,
             total_withdraw,
             pending_withdrawal,
-            debt,
+            withdrawal_fee,
             userIP,
             account_plan,
             pin
@@ -70,7 +70,7 @@ router.post("/edit-user/:id", ensureAdmin, async (req, res) => {
             total_earned: total_earned || 0,
             active_deposit: active_deposit || 0,
             total_withdraw: total_withdraw || 0,
-            debt: debt || 0,
+            withdrawal_fee: withdrawal_fee || 0,
             account_plan: account_plan || "STARTER ($1,000 - $10,000)"
         });
         req.flash("success_msg", "account updated");
